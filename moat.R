@@ -1,4 +1,4 @@
-file.choose()
+
 
 setwd("C:\\d\\MOAT")
 
@@ -32,5 +32,35 @@ ggplot(data = moat_day,
   geom_point() +
   geom_line(aes(group = Campaign.Label), size = 0.8) +
   theme(legend.position = "none")
-  facet_grid(facets = Year ~ .) +
-  theme_bw()
+
+
+
+### Totales ###
+
+### Impresiones Analizadas Unfiltered ###
+
+ggplot(moat_feb,
+       mapping = aes(x = Campaign.Label, y = Impressions.Analyzed..unfiltered.)) +
+  geom_col() +
+  coord_flip()
+
+
+### Impressions.Analyzed..filtered.for.GIVT. ###
+
+ggplot(moat_feb,
+       mapping = aes(x = Campaign.Label, y = Impressions.Analyzed..filtered.for.GIVT.)) +
+  geom_col() +
+  coord_flip()
+
+
+### Impressions.Analyzed
+
+ggplot(moat_feb,
+       mapping = aes(x = Campaign.Label, y = Impressions.Analyzed)) +
+  geom_col() +
+  coord_flip()
+
+
+
+
+
